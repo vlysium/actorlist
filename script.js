@@ -5,15 +5,7 @@ const template = document.querySelector("template").content; //template element
 const modal = document.querySelector("dialog"); //pop-up
 
 let actorlist; //array of actors
-let movieFilter = "all"; //movie filter
-
-//makes the buttons clickable when the document has finished loading
-document.addEventListener("DOMContentLoaded", () => {
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", filterMovies);
-  });
-  fetchData(data);
-});
+let movieFilter = "All"; //movie filter
 
 //fetch data from the actors.json file
 async function fetchData() {
@@ -23,12 +15,20 @@ async function fetchData() {
   console.log(actorlist);
 }
 
+//makes the buttons clickable when the document has finished loading
+document.addEventListener("DOMContentLoaded", () => {
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", filterMovies);
+  });
+  fetchData(data);
+});
+
 //buttons to filter movies
 function filterMovies() {
-  filter = this.dataset.category;
+  movieFilter = this.dataset.movie;
   document.querySelector(".selected").classList.remove("selected");
   this.classList.add("selected");
-  display();
+  display(actorlist);
 }
 
 //clears the list when called to filter movies
@@ -37,7 +37,7 @@ function display(actorlist) {
 
   //filter actors by movies
   actorlist.forEach((actor) => {
-    if (movieFilter == actor.movie || movieFilter == "all") {
+    if (movieFilter == actor.movie || movieFilter == "All") {
       const clone = template.cloneNode(true);
       clone.querySelector(".full-name").textContent = `Name: ${actor.fullname}`;
       clone.querySelector(".movie").textContent = `Movie: ${actor.movie}`;

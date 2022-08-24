@@ -12,6 +12,35 @@ main {
   max-width: 1200px;
 }
 
+nav#filter {
+  margin: 32px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.filter-btn {
+  cursor: pointer;
+  background-color: rgba(120, 216, 248, 0.2);
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, border 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: rgba(74, 142, 245, 0.2);
+  border: 1px solid rgb(74, 142, 245);
+}
+
+.filter-btn.selected {
+  background-color: rgba(74, 142, 245, 0.66);
+  border: 1px solid rgb(74, 142, 245);
+}
+
 ul#list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
