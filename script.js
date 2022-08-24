@@ -39,8 +39,9 @@ function display(actorlist) {
   actorlist.forEach((actor) => {
     if (movieFilter == actor.movie || movieFilter == "all") {
       const clone = template.cloneNode(true);
-      clone.querySelector(".fullname").textContent = `${actor.fullname}`;
-      clone.querySelector("article").addEventListener("click", () => modalView(actor));
+      clone.querySelector(".full-name").textContent = `Name: ${actor.fullname}`;
+      clone.querySelector(".movie").textContent = `Movie: ${actor.movie}`;
+      clone.querySelector(".actor").addEventListener("click", () => modalView(actor));
       list.appendChild(clone);
     }
   });
