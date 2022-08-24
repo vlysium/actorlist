@@ -58,12 +58,18 @@ dialog[open] {
   margin: auto;
   border: none;
   background-color: transparent;
+
+  animation-name: open-pop-up;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.4, 1.5, 0.6, 1);
 }
 
 .pop-up {
-  background-color: rgba(74, 142, 245, 0.2);
+  background-color: rgba(74, 142, 245, 0.4);
   border: 6px solid rgb(74, 142, 245);
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -73,4 +79,14 @@ dialog[open] {
 
 .pop-up p {
   font-size: 1.5rem;
+}
+
+@keyframes open-pop-up {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
