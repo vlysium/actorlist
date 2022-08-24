@@ -5,3 +5,36 @@
   margin: 0;
   padding: 0;
 }
+
+main {
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1200px;
+}
+
+ul#list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+li.actor {
+  list-style: none;
+  margin: 24px 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80px;
+  background-color: rgba(120, 216, 248, 0.2);
+  border: 1px solid rgba(120, 216, 248, 0);
+  border-left: 8px solid rgb(120, 216, 248);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, border 0.2s, border-left 0.2s;
+}
+
+li.actor:hover {
+  background-color: rgba(74, 142, 245, 0.2);
+  border: 1px solid rgb(74, 142, 245);
+  border-left: 8px solid rgb(74, 142, 245);
+}
