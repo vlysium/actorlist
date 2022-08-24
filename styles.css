@@ -14,7 +14,7 @@ main {
 
 ul#list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 li.actor {
@@ -24,7 +24,7 @@ li.actor {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 80px;
+  min-height: 5rem;
   background-color: rgba(120, 216, 248, 0.2);
   border: 1px solid rgba(120, 216, 248, 0);
   border-left: 8px solid rgb(120, 216, 248);
@@ -37,4 +37,40 @@ li.actor:hover {
   background-color: rgba(74, 142, 245, 0.2);
   border: 1px solid rgb(74, 142, 245);
   border-left: 8px solid rgb(74, 142, 245);
+}
+
+p {
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+dialog {
+  display: none;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+dialog[open] {
+  display: block;
+  margin: auto;
+  border: none;
+  background-color: transparent;
+}
+
+.pop-up {
+  background-color: rgba(74, 142, 245, 0.2);
+  border: 6px solid rgb(74, 142, 245);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 8rem;
+}
+
+.pop-up p {
+  font-size: 1.5rem;
 }

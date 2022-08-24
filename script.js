@@ -50,6 +50,8 @@ function display(actorlist) {
 //shows a pop-up box when the function is called
 //see https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement for <dialog> methods
 function modalView(actor) {
+  modal.querySelector(".modal-full-name").textContent = `Name: ${actor.fullname}`;
+  modal.querySelector(".modal-movie").textContent = `Movie: ${actor.movie}`;
   modal.showModal(); //displays the pop-up
   document.addEventListener("click", function (event) {
     if (event.target == modal) modal.close(); //closes the pop-up when clicked outside the pop-up
