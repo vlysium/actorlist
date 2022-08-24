@@ -42,6 +42,23 @@ function display(actorlist) {
       clone.querySelector(".full-name").textContent = `Name: ${actor.fullname}`;
       clone.querySelector(".movie").textContent = `Movie: ${actor.movie}`;
       clone.querySelector(".actor").addEventListener("click", () => modalView(actor));
+
+      //color the actor based on the movie they appear in
+      switch (actor.movie) {
+        case "Fight Club":
+          clone.querySelector(".actor").classList.add("fight-club");
+          break;
+        case "Goodfellas":
+          clone.querySelector(".actor").classList.add("goodfellas");
+          break;
+        case "Inception":
+          clone.querySelector(".actor").classList.add("inception");
+          break;
+        case "Pulp Fiction":
+          clone.querySelector(".actor").classList.add("pulp-fiction");
+          break;
+      }
+
       list.appendChild(clone);
     }
   });

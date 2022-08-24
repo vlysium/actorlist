@@ -1,3 +1,11 @@
+:root {
+  --fight-club: 94, 163, 241;
+  --goodfellas: 235, 122, 184;
+  --inception: 208, 120, 248;
+  --pulp-fiction: 140, 155, 240;
+  --orange: 245, 128, 74;
+}
+
 *,
 *::before,
 *::after {
@@ -22,23 +30,38 @@ nav#filter {
 
 .filter-btn {
   cursor: pointer;
-  background-color: rgba(120, 216, 248, 0.2);
   padding: 12px 20px;
+  background-color: rgb(245, 128, 74);
   border: 1px solid transparent;
   border-radius: 20px;
   font-family: monospace;
   font-size: 0.9rem;
-  transition: background-color 0.2s, border 0.2s;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.filter-btn[data-movie="Fight Club"] {
+  background-color: rgb(var(--fight-club));
+}
+
+.filter-btn[data-movie="Goodfellas"] {
+  background-color: rgb(var(--goodfellas));
+}
+
+.filter-btn[data-movie="Inception"] {
+  background-color: rgb(var(--inception));
+}
+
+.filter-btn[data-movie="Pulp Fiction"] {
+  background-color: rgb(var(--pulp-fiction));
 }
 
 .filter-btn:hover {
-  background-color: rgba(74, 142, 245, 0.2);
-  border: 1px solid rgb(74, 142, 245);
+  opacity: 0.8;
 }
 
 .filter-btn.selected {
-  background-color: rgba(74, 142, 245, 0.66);
-  border: 1px solid rgb(74, 142, 245);
+  opacity: 1;
 }
 
 ul#list {
@@ -54,18 +77,36 @@ li.actor {
   flex-direction: column;
   justify-content: space-between;
   min-height: 5rem;
-  background-color: rgba(120, 216, 248, 0.2);
-  border: 1px solid rgba(120, 216, 248, 0);
-  border-left: 8px solid rgb(120, 216, 248);
+  border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s, border 0.2s, border-left 0.2s;
 }
 
+li.fight-club {
+  background-color: rgba(var(--fight-club), 0.2);
+  border-left: 8px solid rgb(var(--fight-club));
+}
+
+li.goodfellas {
+  background-color: rgba(var(--goodfellas), 0.2);
+  border-left: 8px solid rgb(var(--goodfellas));
+}
+
+li.inception {
+  background-color: rgba(var(--inception), 0.2);
+  border-left: 8px solid rgb(var(--inception));
+}
+
+li.pulp-fiction {
+  background-color: rgba(var(--pulp-fiction), 0.2);
+  border-left: 8px solid rgb(var(--pulp-fiction));
+}
+
 li.actor:hover {
-  background-color: rgba(74, 142, 245, 0.2);
-  border: 1px solid rgb(74, 142, 245);
-  border-left: 8px solid rgb(74, 142, 245);
+  background-color: rgba(var(--orange), 0.2);
+  border: 1px solid rgb(var(--orange));
+  border-left: 8px solid rgb(var(--orange));
 }
 
 p {
@@ -96,8 +137,8 @@ dialog[open] {
 }
 
 .pop-up {
-  background-color: rgba(74, 142, 245, 0.4);
-  border: 6px solid rgb(74, 142, 245);
+  background-color: rgba(var(--orange), 0.4);
+  border: 6px solid rgb(var(--orange));
   border-radius: 12px;
   padding: 1.25rem;
   display: flex;
